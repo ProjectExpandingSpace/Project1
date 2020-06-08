@@ -8,7 +8,9 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public HealthBar healthBar;    
+    public HealthBar healthBar;
+
+    public GameObject deathScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            takeDamage(20);
-        }
-
+    {      
         if(currentHealth <= 0)
         {
             Die();
@@ -34,11 +31,12 @@ public class PlayerHealth : MonoBehaviour
     public void takeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        healthBar.setHealth(currentHealth);
+        healthBar.setHealth(currentHealth);        
     }
 
     private void Die()
     {
         Destroy(this.gameObject);
+        deathScreen.SetActive(true);
     }
 }

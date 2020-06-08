@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+   
+    public float moveSpeed = 1f;
+
+    
+    void Update()
     {
+        transform.Translate(0, -moveSpeed, 0 * Time.deltaTime);
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

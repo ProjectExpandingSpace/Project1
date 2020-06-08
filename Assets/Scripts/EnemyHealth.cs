@@ -8,7 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public HealthBar healthBar;    
+    public HealthBar healthBar;
+    public GameObject endScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -35,5 +36,6 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Destroy(this.gameObject);
+        endScreen.SetActive(true);
     }
 }

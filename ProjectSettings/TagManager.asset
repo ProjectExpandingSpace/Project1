@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Projectile
+  - Bulletblock
+  - PlayerBullet
+  - EnemyStart
+  - BossStop
+  - BossEnemy
   layers:
   - Default
   - TransparentFX

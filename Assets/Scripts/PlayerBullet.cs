@@ -23,7 +23,12 @@ public class PlayerBullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+            collision.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);            
+            Destroy(this.gameObject);
+        }
+        if (collision.CompareTag("BossEnemy"))
+        {
+            collision.GetComponent<BossHealth>().TakeDamage(bulletDamage);
             Destroy(this.gameObject);
         }
     }
